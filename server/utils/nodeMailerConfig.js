@@ -1,9 +1,8 @@
 module.exports = {
   host: 'smtp.ethereal.email',
   port: 587,
-  secure: false, // true for 465, false for other ports
   auth: {
-    user: process.env.etherealMail, // generated ethereal user
-    pass: process.env.etherealPassword, // generated ethereal password
+    user: process.env.etherealMail,
+    pass: process.env.etherealPassword,
   },
 };

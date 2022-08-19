@@ -1,15 +1,16 @@
 const nodemailer = require('nodemailer');
-const nodeMailConfig = require('./nodeMailerConfig');
+const nodemailerConfig = require('./nodemailerConfig');
+
 const sendEmail = async ({ to, subject, html }) => {
   let testAccount = await nodemailer.createTestAccount();
 
-  let transporter = nodemailer.createTransport(nodeMailConfig);
+  const transporter = nodemailer.createTransport(nodemailerConfig);
 
-  return  transporter.sendMail({
-    from: '"Admin website" <dev.ahmed.basher@gmail.com>', // sender address
-    to, // list of receivers
-    subject, // Subject line
-    html, // html body
+  return transporter.sendMail({
+    from: '"Coding Addict" <codingaddict@gmail.com>', // sender address
+    to,
+    subject,
+    html,
   });
 };
 
